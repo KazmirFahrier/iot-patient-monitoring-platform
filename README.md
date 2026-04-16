@@ -1,6 +1,6 @@
 # IoT Patient Monitoring Platform
 
-This repository is a professional, GitHub-ready implementation of the architecture described in the paper **"IoT Based Patient Monitoring System"**. It models the three major subsystems from the paper:
+This repository is a professional, GitHub-ready implementation of an `EEE 416` course project for IoT-based patient monitoring. It models the three major subsystems used in the original prototype:
 
 - Patient health monitoring for vital signs such as heart rate, SpO2, temperature, and blood pressure
 - Ambient environment monitoring for room safety, air quality, and GPS location
@@ -16,9 +16,9 @@ The project is intentionally structured as a realistic product foundation rather
 - Device simulators so the system can be demonstrated without hardware
 - Automated tests and supporting documentation
 
-## Why this implementation
+## Project context
 
-The paper describes an integrated IoT system, but several sections are still conceptual or marked "To be written". This codebase fills in those missing implementation layers with a practical software platform that maps cleanly onto the paper's design while staying easy to run and extend.
+This work was originally implemented as an `EEE 416` course project and tested as a working prototype. The full historical project details, evaluation logs, and some implementation notes are no longer available, so this repository is a polished reconstruction of the system architecture and software workflow rather than a verbatim archive of the original submission.
 
 ## Architecture
 
@@ -30,7 +30,7 @@ The platform uses three logical device classes:
 
 Incoming telemetry is stored in SQLite by default, evaluated against alert thresholds, broadcast to the live dashboard, and queued for notification delivery.
 
-See [docs/architecture.md](docs/architecture.md) and [docs/paper-to-product.md](docs/paper-to-product.md) for the detailed mapping.
+See [docs/architecture.md](docs/architecture.md) and [docs/course-project-context.md](docs/course-project-context.md) for the detailed project context.
 
 ## Quick start
 
@@ -53,7 +53,7 @@ source .venv/bin/activate
 python simulators/demo_stream.py
 ```
 
-The simulator registers paper-inspired devices and continuously posts realistic telemetry, including occasional emergency events to exercise the alerting pipeline.
+The simulator registers representative devices and continuously posts realistic telemetry, including occasional emergency events to exercise the alerting pipeline.
 
 ## Development commands
 
@@ -85,4 +85,4 @@ iot-patient-monitoring-platform/
 
 ## License
 
-This project is provided as a reference implementation. Add your preferred open-source license before publishing publicly.
+This project is available under the MIT License. See [LICENSE](LICENSE).
