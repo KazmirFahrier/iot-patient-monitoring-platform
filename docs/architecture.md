@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project converts the paper's conceptual block diagram into a working software platform with five layers:
+This project converts the original `EEE 416` course-project architecture into a working software platform with five layers:
 
 1. Device layer
 2. Ingestion API
@@ -12,7 +12,7 @@ This project converts the paper's conceptual block diagram into a working softwa
 
 ## Device layer
 
-The paper groups the hardware into three subsystems. The software mirrors that grouping:
+The original prototype grouped the hardware into three subsystems. The software mirrors that grouping:
 
 - `patient_monitor`: vital-sign device, intended for MAX30102, DS18B20, and blood-pressure data
 - `ambient_monitor`: environmental device, intended for DHT11, BMP180, MQ2, flame, and GPS data
