@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page_title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', path='dashboard.css') }}" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Paper Implementation</p>
+          <h1>IoT Patient Monitoring Platform</h1>
+          <p class="lede">
+            Live clinical, environmental, and medicine-box monitoring inspired by the
+            three-part architecture described in the paper.
+          </p>
+        </div>
+        <div class="hero-panel">
+          <span class="live-dot"></span>
+          <strong>Live dashboard</strong>
+          <p>WebSocket stream connected to sensor ingestion and alert events.</p>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel stats-panel">
+          <div class="panel-header">
+            <h2>System overview</h2>
+            <span id="generated-at">Waiting for data</span>
+          </div>
+          <div class="stats-grid" id="stats-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Vitals trend</h2>
+            <span>Heart rate, SpO2, temperature</span>
+          </div>
+          <div class="chart-grid">
+            <div class="chart-card">
+              <h3>Heart rate</h3>
+              <div class="sparkline" id="heart-rate-chart"></div>
+            </div>
+            <div class="chart-card">
+              <h3>SpO2</h3>
+              <div class="sparkline" id="spo2-chart"></div>
+            </div>
+            <div class="chart-card">
+              <h3>Body temperature</h3>
+              <div class="sparkline" id="temp-chart"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Ambient trend</h2>
+            <span>Room conditions and safety</span>
+          </div>
+          <div class="chart-grid">
+            <div class="chart-card">
+              <h3>Room temperature</h3>
+              <div class="sparkline" id="room-temp-chart"></div>
+            </div>
+            <div class="chart-card">
+              <h3>Humidity</h3>
+              <div class="sparkline" id="humidity-chart"></div>
+            </div>
+            <div class="chart-card">
+              <h3>Pressure</h3>
+              <div class="sparkline" id="pressure-chart"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Registered devices</h2>
+            <span>Mapped to the paper's three subsystems</span>
+          </div>
+          <div class="device-list" id="device-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Alert feed</h2>
+            <span>Newest first</span>
+          </div>
+          <div class="feed" id="alert-feed"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Recent telemetry</h2>
+            <span>Cross-device event stream</span>
+          </div>
+          <div class="feed" id="event-feed"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', path='dashboard.js') }}" defer></script>
+  </body>
+</html>
